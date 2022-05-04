@@ -18,10 +18,11 @@ search_box.send_keys("dress")
 time.sleep(5)
 # # clicking the search button, finding by XPATH
 # search_box = driver.find_element(By.XPATH, "//button[@name ='submit_search']").click()
-#""tag[@attribute='valueofattr' and @att2= 'value2]
-#"//div/div/form/input[@type='submit']
+# ""tag[@attribute='valueofattr' and @att2= 'value2]
+# "//div/div/form/input[@type='submit']
 search_box = driver.find_element(By.CSS_SELECTOR, 'button.button-search').click()
 
 time.sleep(5)
 # click the signin button
 driver.find_element(By.PARTIAL_LINK_TEXT, 'Sign in').click()
+driver.close()
