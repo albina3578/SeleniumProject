@@ -63,10 +63,10 @@ def webelement_methods(driver):
 
 
 def working_with_alert(driver):
-    print("Switching to alert"----)
+    print("Switching to alert")
     driver.get("https://demoqa.com/alerts")
-    driver.find_element(By.ID,"promtButton").click()
-    alrt=driver.switch_to.alert
+    driver.find_element(By.ID, "promtButton").click()
+    alrt = driver.switch_to.alert
     time.sleep(2)
     print("Cliking th OK")
     alrt.accept()
