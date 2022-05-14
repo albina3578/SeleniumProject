@@ -14,7 +14,7 @@ min_sldr = driver.find_element(By.XPATH, "//body/div[2]/div[2]/span[1]")
 max_sldr = driver.find_element(By.XPATH, "//body/div[2]/div[2]/span[2]")
 
 # find location of the element:  Default
-print("Location of sliders before moving......") 
+print("Location of sliders before moving......")
 print(min_sldr.location)  # {'x': 59, 'y': 250}
 print(max_sldr.location)  # {'x': 670, 'y': 250}
 
