@@ -65,15 +65,28 @@ def webelement_methods(driver):
     print("Action attribute of compare form: ", compaire_bth.get_attribute("action"))
 
 
-def working_with_alert(driver):
-    print("Switching to alert")
+def working_with_alerts(driver):
+    print("## Switching to Alert")
     driver.get("https://demoqa.com/alerts")
     driver.find_element(By.ID, "promtButton").click()
     alrt = driver.switch_to.alert
     time.sleep(2)
-    print("Clicking the OK")
-    alrt.accept()
+    print("## Clicking the OK...")
+    alrt.accept()  # clicking OK button
 
+    print("## Clicking the cancel...")
+    time.sleep(2)
+    driver.find_element(By.ID, "promtButton").click()
+    alrt = driver.switch_to.alert
+    alrt.dismiss()  # clicking the Cancel button
+
+    print("## Entering the text in Alert...")
+    time.sleep(2)
+    driver.find_element(By.ID, "promtButton").click()
+    alrt = driver.switch_to.alert
+    alrt.send_keys("john doe")  # clicking the Cancel button
+    alrt.accept()
+    time.sleep(2)
 
 def test_explicit_wait(driver):
     driver = webdriver.Chrome()
