@@ -5,6 +5,9 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 import time
 
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.support.wait import WebDriverWait as EC, WebDriverWait
+
 
 def initialize_driver():
     driver = webdriver.Chrome()
@@ -42,7 +45,7 @@ def webelement_methods(driver):
     # driver.implicitly_wait(20)  # max wait time for all find windows
     driver.get("http://automationpractice.com")
     search_box = driver.find_element(By.ID, 'search_query_top')
-    search_box.send_keys('slenium')
+    search_box.send_keys('selenium')
     time.sleep(5)
     # clear the search box and enter dress
     search_box.click()
@@ -68,5 +71,37 @@ def working_with_alert(driver):
     driver.find_element(By.ID, "promtButton").click()
     alrt = driver.switch_to.alert
     time.sleep(2)
-    print("Cliking th OK")
+    print("Clicking the OK")
     alrt.accept()
+
+
+def test_explicit_wait(driver):
+    driver = webdriver.Chrome()
+    driver.maximize_window()
+    driver.implicitly_wait(20)
+    # time objectfrom WebDriverWait()
+    # need list of conditions from expected_conditions() class
+    wdwait = WebDriverWait(driver, 20)  # step1
+    url = "https:://chercher.tech/practice/explicit-wait-sample-selenium-webdriver"
+    print('open the website')
+    print("#####test explicit wait started####")
+    driver.get(url)
+
+    print("get the initial text")
+    # original_msg = driver.find_element(By.ID, "h2").text
+    print(f"Original message displayed: {original_msg}")
+    original_msg = wdwait.until((EC.presence_of_element_located(By.ID, 'h2'))).text
+
+    print("click on 'Change text to selenium Webdriver' button")
+    driver.find_element(By.ID, 'populate-text').click()
+
+    print(" wait until text is present in the element 'Selenium WebDriver'',max wait time is 20 sec")
+
+    wdwait.until(EC.text_to_be_present_in_element(By.ID, "h2"), "Selenium").text  # step2
+    target_msg = driver.find_element(By.ID, "h2").text
+
+    print(f'Target text :{target_msg}')
+
+    print("Waiting button is enabled")
+
+
