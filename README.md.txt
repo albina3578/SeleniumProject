@@ -5,7 +5,7 @@ git init >> pycharm initialize VCS> Git
 
 git add files that needed to have versioning
 
-harm select files'
+harm select files
 git commit "comments that summarizes the changes"
 
 pycharm enter comment and click Commit
@@ -53,8 +53,8 @@ create and save file with .md extention
 * item1
 * item2
 
- use 3 ` to display the code snippet 
-  
+ use 3 ` to display the code snippet
+
   [text for the link](url here)
   ![text for image](location of the image)
   [![Watch the video](https://i.imgur.com/vKb2F1B.png)](https://youtu.be/vt5fpE0bzSY)
@@ -219,7 +219,7 @@ Tags to know:
 
 links, images, forms (textbox, radio, checkbox, submit, fileupload, <input>, <label>, <select>, <textarea>, <button>)
     div - container to holds the styled elements
-CSS - styling document, goes along with html document 
+CSS - styling document, goes along with html document
 NOTE: read about html click here
 
 2. WebDriver class
@@ -272,9 +272,9 @@ element.is_enabled()
 element.is_checked()
 element.click()
 element.send_keys("your message here ")
-element.send_keys(Keys.RETURN)  # hitting the enter key 
-element.send_keys(Keys.ESCAPE) 
-element.send_keys(Keys.UP) 
+element.send_keys(Keys.RETURN)  # hitting the enter key
+element.send_keys(Keys.ESCAPE)
+element.send_keys(Keys.UP)
 element.text   # property - you must not use parenthesis
 Assertion:
 
@@ -299,7 +299,6 @@ Creating tests that simulate keyboard or mouse events using the Actions class
 Simulating mouse operations such as drag-and-drop and double-click
 Running JavaScript code: execute js >> alternative of button.click() (we have seen how to scroll down on the page)
 Capturing screenshots and movies of test runs
-
 6. Chapter 8. Framework in Test Automation
 The way of engineering your project, put your code in structured way:
 
@@ -314,6 +313,36 @@ handle locators and page functions of each page
 this is good when you work with complex project.
 helps you to maintain changing web elements
 Classes, Inheritance, encapsulation, polymorphism
+General Understanding about Test Automation Frameworks
+1. Data Driven Framework:
+Driver Script per scenario -> Data File -> input/output file Driver script per scenario >> Data file >> execution >> compare with expected results
+
+2. Keyword Driven Framework:
+Driver Script > Keyword(steps consist of function names and inputs) >> data file
+
+3. Behavior Driven Framework (from Test Automation perspective)
+**Components of BDD Test Automation Framework
+
+src: a. Feature file: Gherkin scenarios (plain english using Given, When, Then keywords) Given I am in login page.
+
+b. Steps definition @Given("I am in login page.") def login(): # steps to login, code
+
+c. pages: Page Object Modeling Design Pattern, The way of designing your selenium scripts - Object oriented programming concepts (class, object, Inheritance, encapsulation, polymorphism, abstraction)
+
+d. utilities.py | helper.py | generic_helper.py >> functions to use to handle data file, reports, general python functions
+
+e. Fixture files (in pytest it is confest.py ), some framework config files
+
+Data
+
+config.yml
+stocks_buy.yml
+Logs
+
+05152022.log
+Reports
+
+051520221110052_stockbuy_report.html
 PYTEST
 running tests :
 
@@ -357,4 +386,4 @@ HTTP messages used in API calls
 HTML document and tags
 Learning Selenium Testing Tools with Python (book)
 What is xpath and how to build them.
-Socratica playlist in youtube youtube
+Socratica playlist in youtube
