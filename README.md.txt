@@ -5,7 +5,7 @@ git init >> pycharm initialize VCS> Git
 
 git add files that needed to have versioning
 
-harm select files
+harm select files'
 git commit "comments that summarizes the changes"
 
 pycharm enter comment and click Commit
@@ -299,6 +299,7 @@ Creating tests that simulate keyboard or mouse events using the Actions class
 Simulating mouse operations such as drag-and-drop and double-click
 Running JavaScript code: execute js >> alternative of button.click() (we have seen how to scroll down on the page)
 Capturing screenshots and movies of test runs
+
 6. Chapter 8. Framework in Test Automation
 The way of engineering your project, put your code in structured way:
 
@@ -356,4 +357,4 @@ HTTP messages used in API calls
 HTML document and tags
 Learning Selenium Testing Tools with Python (book)
 What is xpath and how to build them.
-Socratica playlist in youtube
+Socratica playlist in youtube youtube
