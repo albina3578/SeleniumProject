@@ -1,4 +1,4 @@
-from WElement.webelement_class import *
+from src.archive.WElement.webelement_class import initialize_chrome, test_hover_over_action, close_browser
 
 driver = initialize_chrome()
 # driver = initialize_firefox()
